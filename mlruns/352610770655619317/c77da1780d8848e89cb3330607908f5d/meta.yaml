@@ -1,0 +1,14 @@
+artifact_uri: file:///C:/Users/vaibh/OneDrive/Desktop/Workstation/Internship/mlruns/352610770655619317/c77da1780d8848e89cb3330607908f5d/artifacts
+end_time: 1778261241690
+entry_point_name: ''
+experiment_id: '352610770655619317'
+lifecycle_stage: active
+run_id: c77da1780d8848e89cb3330607908f5d
+run_name: xgboost_oos_validation
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1778261233571
+status: 3
+tags: []
+user_id: vaibh
