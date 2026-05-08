@@ -1,0 +1,10 @@
+{
+  "buy_threshold": 0.56,
+  "sell_threshold": 0.36,
+  "exit_bar": 2,
+  "sharpe": 1.4526,
+  "max_drawdown": -2.8923,
+  "hit_rate": 62.963,
+  "return_pct": 3.8244,
+  "num_trades": 27
+}

@@ -1,0 +1,28 @@
+artifact_path: file:C:/Users/vaibh/OneDrive/Desktop/Workstation/Internship/mlruns/1/models/m-09686b07c1504ed898a86d1d92503a79/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.13.1
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: ubj
+    xgb_version: 2.1.3
+is_signature_from_type_hint: false
+mlflow_version: 3.12.0
+model_id: m-09686b07c1504ed898a86d1d92503a79
+model_size_bytes: 371777
+model_uuid: m-09686b07c1504ed898a86d1d92503a79
+prompts: null
+run_id: 4cbf4b8fea33488ead3f6d02ae5d87f9
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 12]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-05-07 08:13:38.733295'

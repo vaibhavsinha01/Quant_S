@@ -1,0 +1,14 @@
+[
+  "ret_1d",
+  "ret_5d",
+  "ret_overnight",
+  "high_low_range",
+  "close_vs_ma5",
+  "ma5_smooth_signal",
+  "momentum_5_20",
+  "vol_20d",
+  "vol_50d",
+  "rsi_14",
+  "vix_level",
+  "vix_change"
+]

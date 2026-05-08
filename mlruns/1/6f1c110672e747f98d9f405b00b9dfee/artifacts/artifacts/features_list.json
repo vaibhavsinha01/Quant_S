@@ -1,0 +1,15 @@
+[
+  "volume_normalized",
+  "ma5_smooth_signal",
+  "ret_5d",
+  "vol_50d",
+  "vix_level",
+  "vol_20d",
+  "ret_1d",
+  "close_vs_ma5",
+  "high_low_range",
+  "dow",
+  "ret_overnight",
+  "momentum_5_20",
+  "ret_zscore"
+]
