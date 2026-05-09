@@ -1,0 +1,22 @@
+artifact_path: file:C:/Users/vaibh/OneDrive/Desktop/Workstation/Internship/mlruns/1/models/m-3220a62cc02d4fcd865f43eddfaf93a0/artifacts
+flavors:
+  python_function:
+    data: model.ubj
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.xgboost
+    python_version: 3.13.1
+  xgboost:
+    code: null
+    data: model.ubj
+    model_class: xgboost.sklearn.XGBClassifier
+    model_format: ubj
+    xgb_version: 2.1.3
+mlflow_version: 3.12.0
+model_id: m-3220a62cc02d4fcd865f43eddfaf93a0
+model_size_bytes: 298928
+model_uuid: m-3220a62cc02d4fcd865f43eddfaf93a0
+prompts: null
+run_id: ece35255eb904acc82c77496b6f3e5ff
+utc_time_created: '2026-05-09 03:52:13.484191'

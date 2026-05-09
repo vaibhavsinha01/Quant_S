@@ -1,11 +1,4 @@
-"""
-logger.py
------------------
-Reusable logger with:
-  - Timestamped console output
-  - File output to project/logs/run.log
-  - INFO / WARNING / ERROR support
-"""
+"""logger.py file"""
 
 import logging
 import sys
