@@ -1,14 +1,1 @@
-[
-    "ret_1d",
-    "ret_10d",
-    "ret_intraday",
-    "ret_overnight",
-    "ret_zscore",
-    "close_vs_ma50",
-    "close_vs_252d_high",
-    "rsi_14",
-    "volume_ratio_20d",
-    "vol_20d",
-    "vix_change",
-    "nifty_bn_spread"
-]
+["ret_1d", "ret_5d", "ret_overnight", "ret_zscore", "close_vs_ma20", "momentum_5_20", "vol_20d", "rsi_14", "volume_ratio_20d", "nifty_bn_spread", "vix_change", "close_vs_252d_high"]

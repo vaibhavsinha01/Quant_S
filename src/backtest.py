@@ -1,113 +1,89 @@
 from pathlib import Path
-import json
-import pickle
-
-import numpy as np
 import pandas as pd
-
-from backtesting import Backtest, Strategy
-
+import numpy as np
+import pickle,mlflow
 from logger import get_logger
 
-logger = get_logger(__name__)
+logger=get_logger(__name__)
 
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
+PROJECT_ROOT=Path(__file__).resolve().parent.parent
+ARTIFACTS_DIR=PROJECT_ROOT/"artifacts"
 
-ARTIFACTS_DIR = PROJECT_ROOT / "artifacts"
+MODEL_PATH=ARTIFACTS_DIR/"model.pkl"
+SCALER_PATH=ARTIFACTS_DIR/"scaler.pkl"
+FEATURES_PATH=ARTIFACTS_DIR/"features.json"
 
-MODEL_PATH = ARTIFACTS_DIR / "model.pkl"
-SCALER_PATH = ARTIFACTS_DIR / "scaler.pkl"
-FEATURES_PATH = ARTIFACTS_DIR / "features.json"
-PREDICTIONS_PATH = ARTIFACTS_DIR / "oos_predictions.csv"
+MLFLOW_DB=PROJECT_ROOT/"mlflow.db"
+mlflow.set_tracking_uri(f"sqlite:///{MLFLOW_DB.as_posix()}")
 
-BUY_THRESHOLD = 0.55
-SELL_THRESHOLD = 0.45
-EXIT_BARS = 2
+def load_artifacts():
+ model=pickle.load(open(MODEL_PATH,"rb"))
+ scaler=pickle.load(open(SCALER_PATH,"rb"))
+ features=pd.read_json(FEATURES_PATH,typ="series").tolist()
+ return model,scaler,features
 
-logger.info("Loading artifacts")
+def run_backtest(df,model,scaler,features):
 
-with open(MODEL_PATH, "rb") as f:
-    model = pickle.load(f)
+ df=df.sort_values("date").reset_index(drop=True)
 
-with open(SCALER_PATH, "rb") as f:
-    scaler = pickle.load(f)
+ X=scaler.transform(df[features])
+ proba=model.predict_proba(X)[:,1]
 
-with open(FEATURES_PATH, "r") as f:
-    FEATURES = json.load(f)
+ df["proba"]=proba
 
-df = pd.read_csv(PREDICTIONS_PATH)
+ df["signal"]=0
+ df.loc[df["proba"]>0.55,"signal"]=1
+ df.loc[df["proba"]<0.45,"signal"]=-1
 
-df.columns = df.columns.str.strip().str.lower()
+ df["ret"]=df["close"].pct_change().shift(-1)
 
-df["date"] = pd.to_datetime(df["date"])
+ df["strategy_ret"]=df["signal"]*df["ret"]
 
-df = df.sort_values("date").reset_index(drop=True)
+ df["equity"]=(1+df["strategy_ret"].fillna(0)).cumprod()
 
-required_cols = ["date", "close", "ema50", "probability"]
+ equity_final=df["equity"].iloc[-1]
+ return_pct=(equity_final-1)*100
 
-for col in required_cols:
+ trades=(df["signal"]!=0).sum()
 
-    if col not in df.columns:
-        raise ValueError(f"Missing required column: {col}")
+ win_rate=(df[df["strategy_ret"]>0]["strategy_ret"].count()/max(trades,1))*100
 
-df = df.rename(columns={
-    "close": "Close"
-})
+ sharpe=df["strategy_ret"].mean()/df["strategy_ret"].std()*np.sqrt(252)
 
-df["Open"] = df["Close"]
-df["High"] = df["Close"]
-df["Low"] = df["Close"]
-df["Volume"] = 1
+ stats={
+ "equity_final":float(equity_final),
+ "return_pct":float(return_pct),
+ "trades":int(trades),
+ "win_rate":float(win_rate),
+ "sharpe":float(sharpe)
+ }
 
-df = df.set_index("date")
+ return df,stats
 
-class MLStrategy(Strategy):
+def main():
 
-    def init(self):
+ logger.info("Loading artifacts")
+ model,scaler,features=load_artifacts()
 
-        self.entry_bar = None
+ data_path=PROJECT_ROOT/"artifacts"/"oos_predictions.csv"
 
-    def next(self):
+ df=pd.read_csv(data_path)
 
-        prob = self.data.probability[-1]
-        close = self.data.Close[-1]
-        ema50 = self.data.ema50[-1]
+ logger.info("Running backtest")
 
-        current_bar = len(self.data)
+ result_df,stats=run_backtest(df,model,scaler,features)
 
-        if self.position:
+ logger.info("Backtest completed")
 
-            if current_bar - self.entry_bar >= EXIT_BARS:
-                self.position.close()
+ logger.info(f"Return %: {stats['return_pct']:.2f}")
+ logger.info(f"Sharpe   : {stats['sharpe']:.2f}")
+ logger.info(f"Trades   : {stats['trades']}")
+ logger.info(f"Win rate : {stats['win_rate']:.2f}")
 
-            return
+ result_df.to_csv(ARTIFACTS_DIR/"backtest_results.csv",index=False)
 
-        if prob >= BUY_THRESHOLD and close > ema50:
+ print("\nRun MLflow UI with:")
+ print(f"mlflow ui --backend-store-uri sqlite:///{MLFLOW_DB.as_posix()}")
 
-            self.buy()
-
-            self.entry_bar = current_bar
-
-        elif prob <= SELL_THRESHOLD and close < ema50:
-
-            self.sell()
-
-            self.entry_bar = current_bar
-
-bt = Backtest(
-    df,
-    MLStrategy,
-    cash=100000,
-    commission=0.0005,
-    exclusive_orders=True
-)
-
-logger.info("Running backtest")
-
-stats = bt.run()
-
-logger.info("Backtest completed")
-
-print(stats)
-
-bt.plot()
+if __name__=="__main__":
+ main()
