@@ -1,89 +1,57 @@
+from backtesting import Backtest, Strategy
 from pathlib import Path
 import pandas as pd
 import numpy as np
-import pickle,mlflow
-from logger import get_logger
+import pickle
 
-logger=get_logger(__name__)
+ROOT = Path(__file__).resolve().parent.parent
+ART = ROOT / "artifacts"
 
-PROJECT_ROOT=Path(__file__).resolve().parent.parent
-ARTIFACTS_DIR=PROJECT_ROOT/"artifacts"
+model = pickle.load(open(ART / "model.pkl", "rb"))
+scaler = pickle.load(open(ART / "scaler.pkl", "rb"))
+features = pd.read_json(ART / "features.json", typ="series").tolist()
 
-MODEL_PATH=ARTIFACTS_DIR/"model.pkl"
-SCALER_PATH=ARTIFACTS_DIR/"scaler.pkl"
-FEATURES_PATH=ARTIFACTS_DIR/"features.json"
+class S(Strategy):
+    def init(self):
+        self.ema50 = self.I(lambda x: pd.Series(x).ewm(span=50).mean(), self.data.Close)
 
-MLFLOW_DB=PROJECT_ROOT/"mlflow.db"
-mlflow.set_tracking_uri(f"sqlite:///{MLFLOW_DB.as_posix()}")
+    def next(self):
+        x = np.array([[getattr(self.data, f)[-1] for f in features]])
+        x = scaler.transform(x)
+        p = model.predict_proba(x)[0, 1]
 
-def load_artifacts():
- model=pickle.load(open(MODEL_PATH,"rb"))
- scaler=pickle.load(open(SCALER_PATH,"rb"))
- features=pd.read_json(FEATURES_PATH,typ="series").tolist()
- return model,scaler,features
+        c = self.data.Close[-1]
+        trend = c > self.ema50[-1]
 
-def run_backtest(df,model,scaler,features):
+        if p > 0.5 and trend:
+            if not self.position:
+                self.buy()
+        elif p < 0.5 and not trend:
+            if not self.position:
+                self.sell()
+        else:
+            if self.position:
+                self.position.close()
 
- df=df.sort_values("date").reset_index(drop=True)
+def run():
+    df = pd.read_csv(ART / "oos_predictions.csv")
+    df.columns = df.columns.str.lower()
 
- X=scaler.transform(df[features])
- proba=model.predict_proba(X)[:,1]
+    df = df.rename(columns={
+        "open": "Open",
+        "high": "High",
+        "low": "Low",
+        "close": "Close",
+        "volume": "Volume"
+    })
 
- df["proba"]=proba
+    df = df.dropna(subset=["Open", "High", "Low", "Close"]).reset_index(drop=True)
 
- df["signal"]=0
- df.loc[df["proba"]>0.55,"signal"]=1
- df.loc[df["proba"]<0.45,"signal"]=-1
+    bt = Backtest(df, S, cash=100000, exclusive_orders=True)
+    stats = bt.run()
 
- df["ret"]=df["close"].pct_change().shift(-1)
+    print(stats)
+    bt.plot()
 
- df["strategy_ret"]=df["signal"]*df["ret"]
-
- df["equity"]=(1+df["strategy_ret"].fillna(0)).cumprod()
-
- equity_final=df["equity"].iloc[-1]
- return_pct=(equity_final-1)*100
-
- trades=(df["signal"]!=0).sum()
-
- win_rate=(df[df["strategy_ret"]>0]["strategy_ret"].count()/max(trades,1))*100
-
- sharpe=df["strategy_ret"].mean()/df["strategy_ret"].std()*np.sqrt(252)
-
- stats={
- "equity_final":float(equity_final),
- "return_pct":float(return_pct),
- "trades":int(trades),
- "win_rate":float(win_rate),
- "sharpe":float(sharpe)
- }
-
- return df,stats
-
-def main():
-
- logger.info("Loading artifacts")
- model,scaler,features=load_artifacts()
-
- data_path=PROJECT_ROOT/"artifacts"/"oos_predictions.csv"
-
- df=pd.read_csv(data_path)
-
- logger.info("Running backtest")
-
- result_df,stats=run_backtest(df,model,scaler,features)
-
- logger.info("Backtest completed")
-
- logger.info(f"Return %: {stats['return_pct']:.2f}")
- logger.info(f"Sharpe   : {stats['sharpe']:.2f}")
- logger.info(f"Trades   : {stats['trades']}")
- logger.info(f"Win rate : {stats['win_rate']:.2f}")
-
- result_df.to_csv(ARTIFACTS_DIR/"backtest_results.csv",index=False)
-
- print("\nRun MLflow UI with:")
- print(f"mlflow ui --backend-store-uri sqlite:///{MLFLOW_DB.as_posix()}")
-
-if __name__=="__main__":
- main()
+if __name__ == "__main__":
+    run()

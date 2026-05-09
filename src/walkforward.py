@@ -21,7 +21,8 @@ TRAIN_WINDOW=252
 TEST_WINDOW=63
 STEP_SIZE=21
 
-XGB_PARAMS={"objective":"binary:logistic","eval_metric":"auc","n_estimators":700,"learning_rate":0.015,"max_depth":3,"min_child_weight":8,"subsample":0.7,"colsample_bytree":0.7,"gamma":1.5,"reg_alpha":0.5,"reg_lambda":3.0,"random_state":42,"n_jobs":-1}
+# XGB_PARAMS={"objective":"binary:logistic","eval_metric":"auc","n_estimators":700,"learning_rate":0.015,"max_depth":3,"min_child_weight":8,"subsample":0.7,"colsample_bytree":0.7,"gamma":1.5,"reg_alpha":0.5,"reg_lambda":3.0,"random_state":42,"n_jobs":-1}
+XGB_PARAMS = {"objective": "binary:logistic", "eval_metric": "auc", "n_estimators": 400, "learning_rate": 0.015, "max_depth": 2, "min_child_weight": 2, "subsample": 0.9, "colsample_bytree": 0.67, "gamma": 4.5, "reg_alpha": 1.15, "reg_lambda": 2.8, "random_state": 42, "n_jobs": -1}
 
 def metrics(y,yh,yp):
  return{"accuracy":float(accuracy_score(y,yh)),"balanced_accuracy":float(balanced_accuracy_score(y,yh)),"precision":float(precision_score(y,yh,zero_division=0)),"recall":float(recall_score(y,yh,zero_division=0)),"f1":float(f1_score(y,yh,zero_division=0)),"auc":float(roc_auc_score(y,yp))}

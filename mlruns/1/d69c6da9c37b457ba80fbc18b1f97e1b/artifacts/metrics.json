@@ -1,0 +1,1 @@
+{"accuracy": 0.5317460317460317, "balanced_accuracy": 0.5257056451612904, "precision": 0.5225225225225225, "recall": 0.90625, "f1": 0.6628571428571428, "auc": 0.5307459677419355, "confusion_matrix": [[9, 53], [6, 58]], "majority_baseline_accuracy": 0.5079365079365079, "persistence_baseline_accuracy": 0.584}
