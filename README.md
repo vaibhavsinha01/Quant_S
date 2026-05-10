@@ -1,22 +1,69 @@
-# NIFTY 50 Direction Prediction — Data Bundle
+# NIFTY 50 Direction Prediction Classifier
+**Quant Singularity — Financial ML Intern Screening | Summer 2026**
 
-## Files
+---
 
-- `nifty50.csv` — NIFTY 50 daily OHLCV, 2022-01-01 to 2025-12-31
-- `banknifty.csv` — Bank Nifty daily OHLCV, same window
-- `indiavix.csv` — India VIX daily close (OHLC), same window
-- `starter_features.csv` — approximately 30 candidate features, aligned to NIFTY 50 trading dates
+## Setup
 
-## Source
+1. Clone the repository
+2. Install dependencies
+```bash
+pip install -r requirements.txt
+```
+3. Ensure the data files are in `data/csv/`:
+   - `nifty50.csv`
+   - `banknifty.csv`
+   - `indiavix.csv`
+   - `starter_features.csv`
 
-All data sourced from Yahoo Finance via the yfinance library. Dates are NSE trading days only.
+---
+
+## Run Order
+
+Run the scripts in this order:
+
+```bash
+# 1. Train the model and evaluate on OOS window
+python src/train_model.py
+
+# 2. Walk-forward validation
+python src/walkforward.py
+
+# 3. Backtest on OOS window
+python src/backtest.py
+```
+
+---
+
+## MLflow
+
+To view experiment tracking:
+```bash
+mlflow ui --backend-store-uri sqlite:///mlflow.db
+```
+Then open `http://localhost:5000` in your browser.
+
+---
+
+## Project Structure
+├── src/
+│   ├── data_preprocessing.py
+│   ├── feature_engineering.py
+│   ├── train_model.py
+│   ├── walkforward.py
+│   ├── backtest.py
+│   └── logger.py
+├── data/csv/
+├── artifacts/
+├── mlruns/
+├── mlflow.db
+├── requirements.txt
+└── report.pd
+
+---
 
 ## Notes
 
-The `starter_features.csv` file is provided as a convenience. It has not been rigorously audited. You are free to use it as-is, modify it, drop columns, or ignore it entirely and build your own features from the raw OHLCV files. Your submission should make clear which features you used and why.
-
-Column names in `starter_features.csv` are descriptive but not exhaustively documented. Assume standard conventions (rolling windows are trailing, returns are simple percentage changes, cross-asset columns are forward-filled over missing days) unless the behaviour of a column suggests otherwise.
-
-## Target
-
-The prediction target is NIFTY 50 next-day close direction: 1 if `close[T+1] > close[T]`, 0 otherwise. Design choices around flat or near-zero returns are yours to make and defend in the report.
+- Do not run scripts out of order — `train_model.py` must run before `backtest.py`
+- All artifacts are saved to the `artifacts/` directory automatically
+- The OOS window (July–December 2025) is never touched during training or hyperparameter selection
