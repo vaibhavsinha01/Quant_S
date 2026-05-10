@@ -5,6 +5,9 @@ import pandas as pd
 import numpy as np
 import pickle
 
+import warnings
+warnings.filterwarnings("ignore")
+
 ROOT     = Path(__file__).resolve().parent.parent
 ART      = ROOT / "artifacts"
 

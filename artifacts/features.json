@@ -1,1 +1,1 @@
-["ret_1d", "ret_5d", "ret_20d", "ret_intraday", "ret_overnight", "high_low_range", "volume_ratio_20d", "momentum_5_20", "vol_20d", "rsi_14", "bn_ret_1d", "vix_change"]
+["ret_1d", "ret_zscore", "ma5_smooth_signal", "ret_intraday", "ret_overnight", "high_low_range", "volume_ratio_20d", "momentum_5_20", "vol_20d", "rsi_14", "bn_ret_1d", "vix_change"]
