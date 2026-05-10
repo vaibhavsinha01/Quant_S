@@ -1731,3 +1731,274 @@
 2026-05-10 20:50:17 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
 2026-05-10 20:50:18 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
 2026-05-10 20:50:18 | INFO     | __main__ | Mean AUC 0.4934 | Mean BAL 0.4848
+2026-05-10 20:53:38 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 20:53:38 | INFO     | __main__ | Baselines: {'majority': 0.5079365079365079, 'persistence': 0.584}
+2026-05-10 20:53:39 | INFO     | __main__ | {'accuracy': 0.5555555555555556, 'balanced_accuracy': 0.5493951612903226, 'precision': 0.5357142857142857, 'recall': 0.9375, 'f1': 0.6818181818181818, 'auc': 0.5297379032258065, 'confusion_matrix': [[10, 52], [4, 60]], 'majority_baseline': 0.5079365079365079, 'persistence_baseline': 0.584, 'threshold': 0.5}
+2026-05-10 20:53:40 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 20:53:40 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 20:53:40 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 20:53:40 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 20:53:40 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 20:53:40 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 20:53:46 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): api.mlflow-telemetry.io:443
+2026-05-10 20:53:48 | DEBUG    | urllib3.connectionpool | https://api.mlflow-telemetry.io:443 "POST /log HTTP/1.1" 200 30
+2026-05-10 20:53:52 | INFO     | __main__ | done
+2026-05-10 20:54:05 | INFO     | __main__ | Loading dataset
+2026-05-10 20:54:05 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 20:54:06 | INFO     | __main__ | Fold  1 | AUC 0.6889 | BAL 0.5500
+2026-05-10 20:54:06 | INFO     | __main__ | Fold  2 | AUC 0.4909 | BAL 0.4500
+2026-05-10 20:54:06 | INFO     | __main__ | Fold  3 | AUC 0.6111 | BAL 0.5556
+2026-05-10 20:54:06 | INFO     | __main__ | Fold  4 | AUC 0.8111 | BAL 0.5000
+2026-05-10 20:54:07 | INFO     | __main__ | Fold  5 | AUC 0.4000 | BAL 0.4833
+2026-05-10 20:54:07 | INFO     | __main__ | Fold  6 | AUC 0.1727 | BAL 0.2455
+2026-05-10 20:54:07 | INFO     | __main__ | Fold  7 | AUC 0.3173 | BAL 0.3077
+2026-05-10 20:54:07 | INFO     | __main__ | Fold  8 | AUC 0.5545 | BAL 0.5182
+2026-05-10 20:54:07 | INFO     | __main__ | Fold  9 | AUC 0.5096 | BAL 0.5721
+2026-05-10 20:54:08 | INFO     | __main__ | Fold 10 | AUC 0.3148 | BAL 0.4444
+2026-05-10 20:54:08 | INFO     | __main__ | Fold 11 | AUC 0.5556 | BAL 0.4583
+2026-05-10 20:54:08 | INFO     | __main__ | Fold 12 | AUC 0.5000 | BAL 0.5357
+2026-05-10 20:54:08 | INFO     | __main__ | Fold 13 | AUC 0.3444 | BAL 0.5500
+2026-05-10 20:54:08 | INFO     | __main__ | Fold 14 | AUC 0.4082 | BAL 0.6071
+2026-05-10 20:54:09 | INFO     | __main__ | Fold 15 | AUC 0.4231 | BAL 0.5913
+2026-05-10 20:54:09 | INFO     | __main__ | Fold 16 | AUC 0.6019 | BAL 0.5556
+2026-05-10 20:54:09 | INFO     | __main__ | Fold 17 | AUC 0.5000 | BAL 0.3636
+2026-05-10 20:54:09 | INFO     | __main__ | Fold 18 | AUC 0.5333 | BAL 0.5000
+2026-05-10 20:54:09 | INFO     | __main__ | Fold 19 | AUC 0.5818 | BAL 0.5682
+2026-05-10 20:54:10 | INFO     | __main__ | Fold 20 | AUC 0.5648 | BAL 0.5000
+2026-05-10 20:54:10 | INFO     | __main__ | Fold 21 | AUC 0.2727 | BAL 0.3909
+2026-05-10 20:54:10 | INFO     | __main__ | Fold 22 | AUC 0.5278 | BAL 0.4861
+2026-05-10 20:54:10 | INFO     | __main__ | Logging to MLflow
+2026-05-10 20:54:11 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 20:54:11 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 20:54:11 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 20:54:11 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 20:54:11 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 20:54:11 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 20:54:11 | INFO     | __main__ | Mean AUC 0.4857 | Mean BAL 0.4879
+2026-05-10 20:55:15 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:00:11 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:21:35 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:21:35 | INFO     | __main__ | Baselines: {'majority': 0.5079365079365079, 'persistence': 0.584}
+2026-05-10 21:21:36 | INFO     | __main__ | {'accuracy': 0.5158730158730159, 'balanced_accuracy': 0.5128528225806451, 'precision': 0.5172413793103449, 'recall': 0.703125, 'f1': 0.5960264900662252, 'auc': 0.5480090725806452, 'confusion_matrix': [[20, 42], [19, 45]], 'majority_baseline': 0.5079365079365079, 'persistence_baseline': 0.584, 'threshold': 0.55}
+2026-05-10 21:21:36 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:21:36 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:21:36 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:21:36 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:21:37 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:21:37 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:21:44 | INFO     | __main__ | done
+2026-05-10 21:21:52 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:22:03 | INFO     | __main__ | Loading dataset
+2026-05-10 21:22:03 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:22:03 | INFO     | __main__ | Fold  1 | AUC 0.7000 | BAL 0.6167
+2026-05-10 21:22:03 | INFO     | __main__ | Fold  2 | AUC 0.4091 | BAL 0.4000
+2026-05-10 21:22:04 | INFO     | __main__ | Fold  3 | AUC 0.5463 | BAL 0.4583
+2026-05-10 21:22:04 | INFO     | __main__ | Fold  4 | AUC 0.7444 | BAL 0.6333
+2026-05-10 21:22:04 | INFO     | __main__ | Fold  5 | AUC 0.4333 | BAL 0.3833
+2026-05-10 21:22:04 | INFO     | __main__ | Fold  6 | AUC 0.1636 | BAL 0.3500
+2026-05-10 21:22:04 | INFO     | __main__ | Fold  7 | AUC 0.3558 | BAL 0.4038
+2026-05-10 21:22:04 | INFO     | __main__ | Fold  8 | AUC 0.5364 | BAL 0.5727
+2026-05-10 21:22:04 | INFO     | __main__ | Fold  9 | AUC 0.4615 | BAL 0.4135
+2026-05-10 21:22:04 | INFO     | __main__ | Fold 10 | AUC 0.2963 | BAL 0.2917
+2026-05-10 21:22:05 | INFO     | __main__ | Fold 11 | AUC 0.5093 | BAL 0.4861
+2026-05-10 21:22:05 | INFO     | __main__ | Fold 12 | AUC 0.5714 | BAL 0.5357
+2026-05-10 21:22:05 | INFO     | __main__ | Fold 13 | AUC 0.4222 | BAL 0.5167
+2026-05-10 21:22:05 | INFO     | __main__ | Fold 14 | AUC 0.4898 | BAL 0.4643
+2026-05-10 21:22:05 | INFO     | __main__ | Fold 15 | AUC 0.4663 | BAL 0.4471
+2026-05-10 21:22:05 | INFO     | __main__ | Fold 16 | AUC 0.6620 | BAL 0.4861
+2026-05-10 21:22:05 | INFO     | __main__ | Fold 17 | AUC 0.3636 | BAL 0.4818
+2026-05-10 21:22:06 | INFO     | __main__ | Fold 18 | AUC 0.4444 | BAL 0.4500
+2026-05-10 21:22:06 | INFO     | __main__ | Fold 19 | AUC 0.5818 | BAL 0.5409
+2026-05-10 21:22:06 | INFO     | __main__ | Fold 20 | AUC 0.5556 | BAL 0.5833
+2026-05-10 21:22:06 | INFO     | __main__ | Fold 21 | AUC 0.3091 | BAL 0.3773
+2026-05-10 21:22:06 | INFO     | __main__ | Fold 22 | AUC 0.5741 | BAL 0.5139
+2026-05-10 21:22:06 | INFO     | __main__ | Logging to MLflow
+2026-05-10 21:22:07 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:22:07 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:22:07 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:22:07 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:22:07 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:22:07 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:22:07 | INFO     | __main__ | Mean AUC 0.4817 | Mean BAL 0.4730
+2026-05-10 21:22:30 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:22:30 | INFO     | __main__ | Baselines: {'majority': 0.5079365079365079, 'persistence': 0.584}
+2026-05-10 21:22:31 | INFO     | __main__ | {'accuracy': 0.5396825396825397, 'balanced_accuracy': 0.5325100806451613, 'precision': 0.525, 'recall': 0.984375, 'f1': 0.6847826086956522, 'auc': 0.5480090725806452, 'confusion_matrix': [[5, 57], [1, 63]], 'majority_baseline': 0.5079365079365079, 'persistence_baseline': 0.584, 'threshold': 0.5}
+2026-05-10 21:22:31 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:22:31 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:22:31 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:22:31 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:22:31 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:22:31 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:22:39 | INFO     | __main__ | done
+2026-05-10 21:22:45 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:23:17 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:23:17 | INFO     | __main__ | Baselines: {'majority': 0.5079365079365079, 'persistence': 0.584}
+2026-05-10 21:23:17 | INFO     | __main__ | {'accuracy': 0.5396825396825397, 'balanced_accuracy': 0.5325100806451613, 'precision': 0.525, 'recall': 0.984375, 'f1': 0.6847826086956522, 'auc': 0.5480090725806452, 'confusion_matrix': [[5, 57], [1, 63]], 'majority_baseline': 0.5079365079365079, 'persistence_baseline': 0.584, 'threshold': 0.5}
+2026-05-10 21:23:18 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:23:18 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:23:18 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:23:18 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:23:18 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:23:18 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:23:26 | INFO     | __main__ | done
+2026-05-10 21:23:31 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:23:42 | INFO     | __main__ | Loading dataset
+2026-05-10 21:23:42 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:23:42 | INFO     | __main__ | Fold  1 | AUC 0.7000 | BAL 0.4667
+2026-05-10 21:23:42 | INFO     | __main__ | Fold  2 | AUC 0.4091 | BAL 0.4500
+2026-05-10 21:23:42 | INFO     | __main__ | Fold  3 | AUC 0.5463 | BAL 0.5694
+2026-05-10 21:23:42 | INFO     | __main__ | Fold  4 | AUC 0.7444 | BAL 0.5000
+2026-05-10 21:23:43 | INFO     | __main__ | Fold  5 | AUC 0.4333 | BAL 0.5500
+2026-05-10 21:23:43 | INFO     | __main__ | Fold  6 | AUC 0.1636 | BAL 0.2455
+2026-05-10 21:23:43 | INFO     | __main__ | Fold  7 | AUC 0.3558 | BAL 0.4087
+2026-05-10 21:23:43 | INFO     | __main__ | Fold  8 | AUC 0.5364 | BAL 0.5545
+2026-05-10 21:23:43 | INFO     | __main__ | Fold  9 | AUC 0.4615 | BAL 0.6875
+2026-05-10 21:23:43 | INFO     | __main__ | Fold 10 | AUC 0.2963 | BAL 0.5278
+2026-05-10 21:23:43 | INFO     | __main__ | Fold 11 | AUC 0.5093 | BAL 0.4583
+2026-05-10 21:23:44 | INFO     | __main__ | Fold 12 | AUC 0.5714 | BAL 0.6429
+2026-05-10 21:23:44 | INFO     | __main__ | Fold 13 | AUC 0.4222 | BAL 0.5500
+2026-05-10 21:23:44 | INFO     | __main__ | Fold 14 | AUC 0.4898 | BAL 0.6071
+2026-05-10 21:23:44 | INFO     | __main__ | Fold 15 | AUC 0.4663 | BAL 0.4904
+2026-05-10 21:23:44 | INFO     | __main__ | Fold 16 | AUC 0.6620 | BAL 0.6111
+2026-05-10 21:23:44 | INFO     | __main__ | Fold 17 | AUC 0.3636 | BAL 0.3636
+2026-05-10 21:23:45 | INFO     | __main__ | Fold 18 | AUC 0.4444 | BAL 0.4333
+2026-05-10 21:23:45 | INFO     | __main__ | Fold 19 | AUC 0.5818 | BAL 0.5636
+2026-05-10 21:23:45 | INFO     | __main__ | Fold 20 | AUC 0.5556 | BAL 0.5000
+2026-05-10 21:23:45 | INFO     | __main__ | Fold 21 | AUC 0.3091 | BAL 0.3909
+2026-05-10 21:23:45 | INFO     | __main__ | Fold 22 | AUC 0.5741 | BAL 0.4861
+2026-05-10 21:23:45 | INFO     | __main__ | Logging to MLflow
+2026-05-10 21:23:46 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:23:46 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:23:46 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:23:46 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:23:46 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:23:46 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:23:46 | INFO     | __main__ | Mean AUC 0.4817 | Mean BAL 0.5026
+2026-05-10 21:24:10 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:24:10 | INFO     | __main__ | Baselines: {'majority': 0.5079365079365079, 'persistence': 0.584}
+2026-05-10 21:24:11 | INFO     | __main__ | {'accuracy': 0.5158730158730159, 'balanced_accuracy': 0.5128528225806451, 'precision': 0.5172413793103449, 'recall': 0.703125, 'f1': 0.5960264900662252, 'auc': 0.5480090725806452, 'confusion_matrix': [[20, 42], [19, 45]], 'majority_baseline': 0.5079365079365079, 'persistence_baseline': 0.584, 'threshold': 0.55}
+2026-05-10 21:24:11 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:24:11 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:24:11 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:24:11 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:24:11 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:24:11 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:24:19 | INFO     | __main__ | done
+2026-05-10 21:24:38 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:24:48 | INFO     | __main__ | Loading dataset
+2026-05-10 21:24:48 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:24:49 | INFO     | __main__ | Fold  1 | AUC 0.7000 | BAL 0.6167
+2026-05-10 21:24:49 | INFO     | __main__ | Fold  2 | AUC 0.4091 | BAL 0.4000
+2026-05-10 21:24:49 | INFO     | __main__ | Fold  3 | AUC 0.5463 | BAL 0.4583
+2026-05-10 21:24:49 | INFO     | __main__ | Fold  4 | AUC 0.7444 | BAL 0.6333
+2026-05-10 21:24:49 | INFO     | __main__ | Fold  5 | AUC 0.4333 | BAL 0.3833
+2026-05-10 21:24:49 | INFO     | __main__ | Fold  6 | AUC 0.1636 | BAL 0.3500
+2026-05-10 21:24:50 | INFO     | __main__ | Fold  7 | AUC 0.3558 | BAL 0.4038
+2026-05-10 21:24:50 | INFO     | __main__ | Fold  8 | AUC 0.5364 | BAL 0.5727
+2026-05-10 21:24:50 | INFO     | __main__ | Fold  9 | AUC 0.4615 | BAL 0.4135
+2026-05-10 21:24:50 | INFO     | __main__ | Fold 10 | AUC 0.2963 | BAL 0.2917
+2026-05-10 21:24:50 | INFO     | __main__ | Fold 11 | AUC 0.5093 | BAL 0.4861
+2026-05-10 21:24:50 | INFO     | __main__ | Fold 12 | AUC 0.5714 | BAL 0.5357
+2026-05-10 21:24:51 | INFO     | __main__ | Fold 13 | AUC 0.4222 | BAL 0.5167
+2026-05-10 21:24:51 | INFO     | __main__ | Fold 14 | AUC 0.4898 | BAL 0.4643
+2026-05-10 21:24:51 | INFO     | __main__ | Fold 15 | AUC 0.4663 | BAL 0.4471
+2026-05-10 21:24:51 | INFO     | __main__ | Fold 16 | AUC 0.6620 | BAL 0.4861
+2026-05-10 21:24:51 | INFO     | __main__ | Fold 17 | AUC 0.3636 | BAL 0.4818
+2026-05-10 21:24:51 | INFO     | __main__ | Fold 18 | AUC 0.4444 | BAL 0.4500
+2026-05-10 21:24:51 | INFO     | __main__ | Fold 19 | AUC 0.5818 | BAL 0.5409
+2026-05-10 21:24:52 | INFO     | __main__ | Fold 20 | AUC 0.5556 | BAL 0.5833
+2026-05-10 21:24:52 | INFO     | __main__ | Fold 21 | AUC 0.3091 | BAL 0.3773
+2026-05-10 21:24:52 | INFO     | __main__ | Fold 22 | AUC 0.5741 | BAL 0.5139
+2026-05-10 21:24:52 | INFO     | __main__ | Logging to MLflow
+2026-05-10 21:24:52 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:24:52 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:24:52 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:24:53 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:24:53 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:24:53 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:24:53 | INFO     | __main__ | Mean AUC 0.4817 | Mean BAL 0.4730
+2026-05-10 21:28:05 | INFO     | __main__ | Loading dataset
+2026-05-10 21:28:05 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:28:05 | INFO     | __main__ | Fold  1 | AUC 0.6546 | BAL 0.5571
+2026-05-10 21:28:05 | INFO     | __main__ | Fold  2 | AUC 0.5016 | BAL 0.5192
+2026-05-10 21:28:05 | INFO     | __main__ | Fold  3 | AUC 0.4087 | BAL 0.4643
+2026-05-10 21:28:05 | INFO     | __main__ | Fold  4 | AUC 0.4462 | BAL 0.4424
+2026-05-10 21:28:05 | INFO     | __main__ | Fold  5 | AUC 0.5051 | BAL 0.5595
+2026-05-10 21:28:06 | INFO     | __main__ | Fold  6 | AUC 0.5156 | BAL 0.4896
+2026-05-10 21:28:06 | INFO     | __main__ | Fold  7 | AUC 0.5872 | BAL 0.5157
+2026-05-10 21:28:06 | INFO     | __main__ | Fold  8 | AUC 0.5827 | BAL 0.5056
+2026-05-10 21:28:06 | INFO     | __main__ | Fold  9 | AUC 0.6517 | BAL 0.5208
+2026-05-10 21:28:06 | INFO     | __main__ | Fold 10 | AUC 0.5333 | BAL 0.5305
+2026-05-10 21:28:06 | INFO     | __main__ | Fold 11 | AUC 0.3558 | BAL 0.4038
+2026-05-10 21:28:06 | INFO     | __main__ | Fold 12 | AUC 0.3398 | BAL 0.4071
+2026-05-10 21:28:07 | INFO     | __main__ | Fold 13 | AUC 0.4574 | BAL 0.4678
+2026-05-10 21:28:07 | INFO     | __main__ | Fold 14 | AUC 0.3951 | BAL 0.3889
+2026-05-10 21:28:07 | INFO     | __main__ | Fold 15 | AUC 0.4012 | BAL 0.3659
+2026-05-10 21:28:07 | INFO     | __main__ | Fold 16 | AUC 0.4484 | BAL 0.4105
+2026-05-10 21:28:07 | INFO     | __main__ | Fold 17 | AUC 0.4634 | BAL 0.4534
+2026-05-10 21:28:07 | INFO     | __main__ | Fold 18 | AUC 0.5329 | BAL 0.5046
+2026-05-10 21:28:08 | INFO     | __main__ | Fold 19 | AUC 0.6040 | BAL 0.5894
+2026-05-10 21:28:08 | INFO     | __main__ | Fold 20 | AUC 0.5171 | BAL 0.4439
+2026-05-10 21:28:08 | INFO     | __main__ | Fold 21 | AUC 0.5077 | BAL 0.4857
+2026-05-10 21:28:08 | INFO     | __main__ | Fold 22 | AUC 0.4802 | BAL 0.4548
+2026-05-10 21:28:08 | INFO     | __main__ | Fold 23 | AUC 0.4949 | BAL 0.5214
+2026-05-10 21:28:08 | INFO     | __main__ | Fold 24 | AUC 0.5477 | BAL 0.5573
+2026-05-10 21:28:08 | INFO     | __main__ | Fold 25 | AUC 0.4813 | BAL 0.5076
+2026-05-10 21:28:09 | INFO     | __main__ | Fold 26 | AUC 0.4554 | BAL 0.4868
+2026-05-10 21:28:09 | INFO     | __main__ | Logging to MLflow
+2026-05-10 21:28:09 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:28:09 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:28:09 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:28:09 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:28:09 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:28:10 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:28:10 | INFO     | __main__ | Mean AUC 0.4950 | Mean BAL 0.4828
+2026-05-10 21:29:33 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:29:33 | INFO     | __main__ | Baselines: {'majority': 0.5079365079365079, 'persistence': 0.584}
+2026-05-10 21:29:33 | INFO     | __main__ | {'accuracy': 0.5158730158730159, 'balanced_accuracy': 0.5128528225806451, 'precision': 0.5172413793103449, 'recall': 0.703125, 'f1': 0.5960264900662252, 'auc': 0.5480090725806452, 'confusion_matrix': [[20, 42], [19, 45]], 'majority_baseline': 0.5079365079365079, 'persistence_baseline': 0.584, 'threshold': 0.55}
+2026-05-10 21:29:34 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:29:34 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:29:34 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:29:34 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:29:34 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:29:34 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:29:41 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): api.mlflow-telemetry.io:443
+2026-05-10 21:29:42 | DEBUG    | urllib3.connectionpool | https://api.mlflow-telemetry.io:443 "POST /log HTTP/1.1" 200 30
+2026-05-10 21:29:45 | INFO     | __main__ | done
+2026-05-10 21:29:53 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:30:03 | INFO     | __main__ | Loading dataset
+2026-05-10 21:30:03 | INFO     | data_preprocessing | Final shape: (988, 13)
+2026-05-10 21:30:03 | INFO     | __main__ | Fold  1 | AUC 0.6546 | BAL 0.5571
+2026-05-10 21:30:03 | INFO     | __main__ | Fold  2 | AUC 0.5016 | BAL 0.5192
+2026-05-10 21:30:03 | INFO     | __main__ | Fold  3 | AUC 0.4087 | BAL 0.4643
+2026-05-10 21:30:03 | INFO     | __main__ | Fold  4 | AUC 0.4462 | BAL 0.4424
+2026-05-10 21:30:04 | INFO     | __main__ | Fold  5 | AUC 0.5051 | BAL 0.5595
+2026-05-10 21:30:04 | INFO     | __main__ | Fold  6 | AUC 0.5156 | BAL 0.4896
+2026-05-10 21:30:04 | INFO     | __main__ | Fold  7 | AUC 0.5872 | BAL 0.5157
+2026-05-10 21:30:04 | INFO     | __main__ | Fold  8 | AUC 0.5827 | BAL 0.5056
+2026-05-10 21:30:04 | INFO     | __main__ | Fold  9 | AUC 0.6517 | BAL 0.5208
+2026-05-10 21:30:04 | INFO     | __main__ | Fold 10 | AUC 0.5333 | BAL 0.5305
+2026-05-10 21:30:04 | INFO     | __main__ | Fold 11 | AUC 0.3558 | BAL 0.4038
+2026-05-10 21:30:05 | INFO     | __main__ | Fold 12 | AUC 0.3398 | BAL 0.4071
+2026-05-10 21:30:05 | INFO     | __main__ | Fold 13 | AUC 0.4574 | BAL 0.4678
+2026-05-10 21:30:05 | INFO     | __main__ | Fold 14 | AUC 0.3951 | BAL 0.3889
+2026-05-10 21:30:05 | INFO     | __main__ | Fold 15 | AUC 0.4012 | BAL 0.3659
+2026-05-10 21:30:05 | INFO     | __main__ | Fold 16 | AUC 0.4484 | BAL 0.4105
+2026-05-10 21:30:05 | INFO     | __main__ | Fold 17 | AUC 0.4634 | BAL 0.4534
+2026-05-10 21:30:05 | INFO     | __main__ | Fold 18 | AUC 0.5329 | BAL 0.5046
+2026-05-10 21:30:06 | INFO     | __main__ | Fold 19 | AUC 0.6040 | BAL 0.5894
+2026-05-10 21:30:06 | INFO     | __main__ | Fold 20 | AUC 0.5171 | BAL 0.4439
+2026-05-10 21:30:06 | INFO     | __main__ | Fold 21 | AUC 0.5077 | BAL 0.4857
+2026-05-10 21:30:06 | INFO     | __main__ | Fold 22 | AUC 0.4802 | BAL 0.4548
+2026-05-10 21:30:06 | INFO     | __main__ | Fold 23 | AUC 0.4949 | BAL 0.5214
+2026-05-10 21:30:06 | INFO     | __main__ | Fold 24 | AUC 0.5477 | BAL 0.5573
+2026-05-10 21:30:06 | INFO     | __main__ | Fold 25 | AUC 0.4813 | BAL 0.5076
+2026-05-10 21:30:06 | INFO     | __main__ | Fold 26 | AUC 0.4554 | BAL 0.4868
+2026-05-10 21:30:06 | INFO     | __main__ | Logging to MLflow
+2026-05-10 21:30:07 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:30:07 | DEBUG    | git.cmd | Popen(['git', 'version'], cwd=C:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:30:07 | DEBUG    | git.cmd | Popen(['git', 'check-ignore', 'c:\\Users\\vaibh\\OneDrive\\Desktop\\Workstation\\Internship\\src'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=None, shell=False, universal_newlines=False)
+2026-05-10 21:30:07 | DEBUG    | git.cmd | Popen(['git', 'cat-file', '--batch-check'], cwd=c:\Users\vaibh\OneDrive\Desktop\Workstation\Internship, stdin=<valid stream>, shell=False, universal_newlines=False)
+2026-05-10 21:30:07 | DEBUG    | urllib3.connectionpool | Starting new HTTPS connection (1): config.mlflow-telemetry.io:443
+2026-05-10 21:30:07 | DEBUG    | urllib3.connectionpool | https://config.mlflow-telemetry.io:443 "GET /3.12.0.json HTTP/1.1" 200 308
+2026-05-10 21:30:07 | INFO     | __main__ | Mean AUC 0.4950 | Mean BAL 0.4828

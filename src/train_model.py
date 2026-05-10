@@ -27,16 +27,16 @@ OOS = "2025-07-01"
 PARAMS = {
     "objective":        "binary:logistic",
     "eval_metric":      "auc",
-    "n_estimators":     500,
-    "learning_rate":    0.010,
-    "max_depth":        3,
-    "min_child_weight": 3,
-    "subsample":        0.8,
+    "n_estimators":     400,
+    "learning_rate":    0.015,
+    "max_depth":        2,
+    "min_child_weight": 2,
+    "subsample":        0.9,
     "colsample_bytree": 0.67,
     "gamma":            4.5,
-    "reg_alpha":        1.2,
+    "reg_alpha":        1.15,
     "reg_lambda":       2.8,
-    "random_state":     13,
+    "random_state":     42,
     "n_jobs":           -1,
 }
 # PARAMS = {}
